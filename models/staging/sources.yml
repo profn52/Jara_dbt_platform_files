@@ -1,0 +1,8 @@
+sources:
+  - name: jara_source
+    database: JARA_CAPSTONE
+    schema: JARA_CAPSTONE
+    tables:
+      - name: deliveries
+      - name: riders
+      - name: customers

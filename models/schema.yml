@@ -1,0 +1,20 @@
+version: 2
+
+models:
+
+  - name: stg_deliveries
+    description: >
+      One row per order. Duplicates removed, statuses standardised,
+      every amount converted to pounds.
+    columns:
+      - name: delivery_id
+        description: Unique id for the order.
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: One of six values. Nothing else is allowed.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['delivered', 'failed', 'cancelled']
